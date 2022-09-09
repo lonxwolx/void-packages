@@ -1,0 +1,18 @@
+# Template file for 'pa-notify'
+pkgname=pa-notify
+version=1.4.1
+revision=1
+build_style=cmake
+configure_args="-Wno-dev"
+hostmakedepends="pkg-config"
+makedepends="libnotify-devel pulseaudio-devel"
+short_desc="PulseAudio or PipeWire volume notification"
+maintainer="lonxwolx <lonxwolx@gmail.com>"
+license="MIT"
+homepage="https://github.com/ikrivosheev/pa-notify"
+distfiles="https://github.com/ikrivosheev/${pkgname}/archive/refs/tags/v${version}.tar.gz"
+checksum=fe6b8d243aaa894b78883dd8421f7f7e6aa3c2fea7226432ada118ec5594101a
+
+post_install() {
+	vlicense LICENSE
+}
