@@ -1,0 +1,17 @@
+# Template file for 'i3-style'
+pkgname=i3-style
+version=1.0.2
+revision=1
+build_style=cargo
+short_desc="Make your i3 config a little more stylish"
+maintainer="lonxwolx <lonxwolx@gmail.com>"
+license="BSD-2-Clause-Views"
+homepage="https://github.com/altdesktop/i3-style"
+distfiles="https://github.com/altdesktop/i3-style/archive/refs/tags/v${version}.tar.gz"
+checksum=44934a39094e43f541ffa2416c9f76cc400228c6104ae6b8f0df17e061af1a7b
+
+post_install() {
+	vmkdir usr/share/${pkgname}
+	vcopy themes usr/share/${pkgname}
+	vlicense LICENSE
+}
